@@ -4,37 +4,54 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Informações do PC</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
-    <section class="section">
-        <div class="container">
-            <table class="table is-fullwidth is-striped is-bordered">
-                <thead>
-                    <tr>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Nome</th>
-                        <th>Quantidade de CPU's</th>
-                        <th>Arquitetura</th>
-                        <th>Familia</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for pc_info in machine %}
-                    <tr>
-                        <th> {{ pc_info.marca }} </th>
-                        <td> {{ pc_info.modelo }} </td>
-                        <td> {{ pc_info.nome }} </td>
-                        <td> {{ pc_info.qtd_cpu }} </td>
-                        <td> {{ pc_info.arquitetura }} </td>
-                        <td> {{ pc_info.familia }} </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+    <nav class="column-data-view">
+
+        {% for pc_info in machine %}
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="data-title-view">Marca</p>
+                <p class="heading"> {{ pc_info.marca }} </p>
+            </div>
         </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="data-title-view">Modelo</p>
+                <p class="heading"> {{ pc_info.modelo }} </p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="data-title-view">Nome</p>
+                <p class="heading"> {{ pc_info.nome }} </p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="data-title-view">Quantidade de CPU's</p>
+                <p class="heading"> {{ pc_info.qtd_cpu }} </p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="data-title-view">Arquitetura</p>
+                <p class="heading"> {{ pc_info.arquitetura }} </p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="data-title-view">Familia</p>
+                <p class="heading"> {{ pc_info.familia }} </p>
+            </div>
+        </div>
+        {% endfor %}
+    </nav>
+    </thead>
     </section>
 </body>
 
